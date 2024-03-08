@@ -1,0 +1,171 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+body{
+    height: 100vh;
+    background-color:#FFF3C7 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.app{
+    font-family: "Varela Round",sans-serif;
+    width: min(95vw,500px);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 1.875em;
+}
+.app h1{
+    font-family: "Varela Round", sans-serif;
+}
+.container{
+    padding: 1.5em 2em;
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius:0.8em;
+}
+#wrapper{
+    position: relative;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 1em;
+}
+#wrapper input{
+    width: 100%;
+    background-color: transparent;
+    color: #111111;
+    font-size: 0.9em;
+    border: none;
+    border-bottom: 2px solid #d1d3d4;
+    padding: 1em 0.5em;
+}
+#wrapper input:focus{
+    outline: none;
+    border-color: #F7418F;
+}
+#wrapper button{
+    position: relative;
+    border-radius: 0.5em;
+    font-weight: 500;
+    font-size: 1.5em;
+    background-color: #F7418F;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+#error{
+    text-align: center;
+    background-color: #ffffff;
+    color: #ff5c5c;
+    margin-top: 1.5em;
+    padding: 1em 0;
+    border-radius: 0.8em;
+    display: none;
+}
+
+#tasks{
+    margin-top: 1em;
+    border-radius: 0.5em;
+    width: 100%;
+    position: relative;
+    padding: 1em 0.5em;
+}
+
+.task {
+    background-color: #FC819E;
+    padding: 0.6em 1.2em;
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    gap: 1em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.05);
+    align-items: center;
+    cursor: pointer;
+}
+
+.task:not(:first-child){
+    margin-top: 1em;
+}
+
+.task input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+    background-color: #FFF3C7;
+}
+
+.task input[type="checkbox"]:before{
+    content: "";
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.task input[type="checkbox"]:checked{
+    background-color: #F7418F;
+    border-color: #F7418F;
+}
+
+.task input[type="checkbox"]:checked:before{
+    position: absolute;
+    content: "\f00c";
+    color: #ffffff;
+    font-size: 0.8em;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.task span{
+    font-size: 1.1em;
+    font-weight: 400;
+    width: auto;
+}
+.task button{
+    padding: 1em 0;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.edit{
+    color: #fff;
+    background-color: #F7418F;
+}
+.delete{
+    color: #fff;
+    background-color: #F7418F;
+}
+#pending-tasks span{
+    color: #F7418F;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #000;
+}
+@media screen and (max-width: 350px) {
+    #wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto; 
+        height: 120px;
+    }
+    .container {
+        padding: 12px 8px;
+    }
+    .task{
+        display: grid;
+        grid-template-columns:2fr 2fr;
+    }
+}
