@@ -16,7 +16,7 @@ The To-Do List Web Application is a user-friendly task management tool designed 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/Vishnu-WebDev/To---Do-List.git
    ```
 
 2. **Open the Application:**
